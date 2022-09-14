@@ -1,1 +1,28 @@
-<p>pokemon-list works!</p>
+<p-table [value]="pokemon">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>HP</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>Sp.Atk</th>
+            <th>Sp.Def</th>
+            <th>Speed</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pokemon>
+        <tr>
+            <td>{{pokemon.id}}</td>
+            <td>{{pokemon.name["english"]}}</td>
+            <td>{{pokemon.type}}</td>
+            <td>{{pokemon.stats["HP"]}}</td>
+            <td>{{pokemon.stats["Attack"]}}</td>
+            <td>{{pokemon.stats["Defense"]}}</td>
+            <td>{{pokemon.stats["Sp. Attack"]}}</td>
+            <td>{{pokemon.stats["Sp. Defense"]}}</td>
+            <td>{{pokemon.stats["Speed"]}}</td>
+        </tr>
+    </ng-template>
+</p-table>
