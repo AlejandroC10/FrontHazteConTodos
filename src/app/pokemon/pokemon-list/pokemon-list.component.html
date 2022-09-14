@@ -14,7 +14,10 @@
     </ng-template>
     <ng-template pTemplate="body" let-pokemon>
         <tr>
-            <td>{{pokemon.id}}</td>
+            <td>
+                <img src="https://img.pokemondb.net/sprites/sword-shield/icon/{{pokemon.name['english'].replace(' ', '-').replace('.', '').replace('\'', '').replaceAll('é', 'e').replace('♀', '-f').replace('♂', '-m') | lowercase}}.png">
+                {{pokemon.id}}
+            </td>
             <td>{{pokemon.name["english"]}}</td>
             <td>{{pokemon.type}}</td>
             <td>{{pokemon.stats["HP"]}}</td>
