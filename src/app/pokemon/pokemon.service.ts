@@ -9,10 +9,10 @@ import { IPokemon } from './IPokemon';
 })
 export class PokemonService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getAllPokemon(): Observable<IPokemon[]> {
-    return this.http.get<IPokemon[]>("https://localhost:7216/pokemon")
+    return this.http.get<IPokemon[]>("https://localhost:7216/Pokemon")
   }
 
 }
