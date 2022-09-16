@@ -13,7 +13,7 @@ table{
 }
 
 .table-body{
-    text-align: center;
+    text-align: center;    
 }
 
 .table-body:nth-child(2n){

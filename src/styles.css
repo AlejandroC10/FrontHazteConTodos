@@ -9,6 +9,10 @@ body{
     margin: 0;
 }
 
+.p-paginator{
+    margin-top: 10px;
+}
+
 .p-paginator button{
     margin: 0 5px;
     padding: 5px 10px;

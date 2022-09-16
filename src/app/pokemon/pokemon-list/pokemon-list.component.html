@@ -32,15 +32,15 @@
     <ng-template pTemplate="header">
         <tr class="table-header">
             <th></th>
-            <th>#</th>
-            <th>Name</th>
+            <th pSortableColumn="id"># <p-sortIcon field="id"></p-sortIcon></th>
+            <th pSortableColumn="name.english">Name <p-sortIcon field="name.english"></p-sortIcon></th>
             <th>Type</th>
-            <th>HP</th>
-            <th>Attack</th>
-            <th>Defense</th>
+            <th pSortableColumn="stats.HP">HP <p-sortIcon field="stats.HP"></p-sortIcon></th>
+            <th pSortableColumn="stats.Attack">Attack <p-sortIcon field="stats.Attack"></p-sortIcon></th>
+            <th pSortableColumn="stats.Defense">Defense <p-sortIcon field="stats.Defense"></p-sortIcon></th>
             <th>Sp.Atk</th>
             <th>Sp.Def</th>
-            <th>Speed</th>
+            <th pSortableColumn="stats.Speed">Speed <p-sortIcon field="stats.Speed"></p-sortIcon></th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-pokemon>

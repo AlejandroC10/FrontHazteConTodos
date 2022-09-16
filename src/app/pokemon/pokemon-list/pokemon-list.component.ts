@@ -16,10 +16,12 @@ export class PokemonListComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonService.getAllPokemon().subscribe({next: (pokemon: IPokemon[]) => this.pokemon = pokemon, error: (err: Error) => console.error(err)})
+    
   }
 
   clear(table:Table){
     table.clear()
+    console.log(this.pokemon[0]);
   }
 
   globalFilter($event:Event, filterType:String){
