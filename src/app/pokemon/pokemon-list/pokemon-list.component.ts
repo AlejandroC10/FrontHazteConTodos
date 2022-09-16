@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Table } from 'primeng/table';
 import { IPokemon } from '../IPokemon';
 import { PokemonService } from '../pokemon.service';
 
@@ -10,11 +11,18 @@ import { PokemonService } from '../pokemon.service';
 export class PokemonListComponent implements OnInit {
 
   pokemon!: IPokemon[];
-
+  @ViewChild("dt1") list!: Table;
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
     this.pokemonService.getAllPokemon().subscribe({next: (pokemon: IPokemon[]) => this.pokemon = pokemon, error: (err: Error) => console.error(err)})
   }
 
+  clear(table:Table){
+    table.clear()
+  }
+
+  globalFilter($event:Event, filterType:String){
+    this.list.filterGlobal(($event.target as HTMLInputElement).value, filterType)
+  }
 }

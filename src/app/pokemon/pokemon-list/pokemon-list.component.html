@@ -1,4 +1,13 @@
-<p-table [value]="pokemon">
+<p-table #dt1 [value]="pokemon" [globalFilterFields]="['name.english']">
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="globalFilter($event, 'contains')" placeholder="Search keyword" />
+            </span>
+        </div>
+    </ng-template>
     <ng-template pTemplate="header">
         <tr>
             <th>#</th>
