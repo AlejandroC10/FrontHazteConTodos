@@ -1,6 +1,10 @@
 <p-table #dt1 [value]="pokemon" [globalFilterFields]="['name.english']" [paginator] ="true" [rows]="15">
     <ng-template pTemplate="caption">
-        <div class="flex">
+        <div class="flex table-filters">            
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="globalFilter($event, 'contains')" placeholder="Search keyword" />
+            </span>
             <select (change)="filterByType($event, 'type', 'contains')">
                 <option value="">All</option>
                 <option value="Bug">Bug</option>
@@ -19,18 +23,15 @@
                 <option value="Ice">Ice</option>
                 <option value="Normal">Normal</option>
                 <option value="Psychic">Psychic</option>
-                <option value="Fly">Fly</option>
+                <option value="Flying">Flying</option>
                 <option value="Poison">Poison</option>
             </select>
             <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)">Clear</button>
-            <span class="p-input-icon-left ml-auto">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text" (input)="globalFilter($event, 'contains')" placeholder="Search keyword" />
-            </span>
         </div>
     </ng-template>
     <ng-template pTemplate="header">
-        <tr>
+        <tr class="table-header">
+            <th></th>
             <th>#</th>
             <th>Name</th>
             <th>Type</th>
@@ -43,13 +44,17 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-pokemon>
-        <tr>
+        <tr class="table-body">
             <td>
                 <img src="https://img.pokemondb.net/sprites/sword-shield/icon/{{pokemon.name['english'].replace(' ', '-').replace('.', '').replace('\'', '').replaceAll('é', 'e').replace('♀', '-f').replace('♂', '-m') | lowercase}}.png">
-                {{pokemon.id}}
             </td>
+            <td>{{pokemon.id}}</td>
             <td>{{pokemon.name["english"]}}</td>
-            <td>{{pokemon.type}}</td>
+            <td>
+                <p *ngFor="let type of pokemon.type" class="type-container">
+                   <span class="{{type | lowercase}}">{{type}}</span>
+                </p>
+            </td>
             <td>{{pokemon.stats["HP"]}}</td>
             <td>{{pokemon.stats["Attack"]}}</td>
             <td>{{pokemon.stats["Defense"]}}</td>

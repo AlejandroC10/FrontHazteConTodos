@@ -1,0 +1,174 @@
+table{
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table-header{
+    background-color: #254ae8;
+    color: white;        
+}
+
+.table-header th{
+    padding: 10px 0;
+}
+
+.table-body{
+    text-align: center;
+}
+
+.table-body:nth-child(2n){
+    background-color: #254ae850;
+}
+
+.table-body:hover{
+    background-color: #254ae8AA;
+    color: white;
+}
+
+
+.table-body .img-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+}
+
+.table-body .img-container p{
+    display: inline;
+}
+
+.type-container{    
+    margin-right: 5px;
+    display: inline;    
+}
+
+.type-container span{
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.grass{
+    background-color: #99FF66;
+    color: black;        
+}
+
+.steel{
+    background-color: #CCCCCC;
+    color: black;        
+}
+
+.water{
+    background-color: #B0E2FF;
+    color: black;        
+}
+
+.bug{
+    background-color: #99CC33;
+    color: white;        
+}
+
+.dragon{
+    background-color: #AB82FF;
+    color: white;        
+}
+
+.electric{
+    background-color: #FFD700;
+    color: white;        
+}
+
+.ghost{
+    background-color: #778899;
+    color: white;        
+}
+
+.fire{
+    background-color: #FF7F00;
+    color: white;        
+}
+
+.fairy{
+    background-color: #FFB0FF;
+    color: white;        
+}
+
+.ice{
+    background-color: #ADD8E6;
+    color: white;        
+}
+
+.fighting{
+    background-color: #FF6A6A;
+    color: white;        
+}
+
+.normal{
+    background-color: #DDCCAA;
+    color: white;        
+}
+
+.psychic{
+    background-color: #FFB5C5;
+    color: white;        
+}
+
+.rock{
+    background-color: #CD853F;
+    color: white;        
+}
+
+.dark{
+    background-color: #A9A9A9;
+    color: white;        
+}
+
+.ground{
+    background-color: #DEB887;
+    color: white;        
+}
+
+.poison{
+    background-color: #CC88BB;
+    color: white;        
+}
+
+.flying{
+    background-color: #BAAAFF;
+    color: white;        
+}
+
+.table-filters{
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-filters input, .table-filters button{
+    margin: 0 10px;
+}
+
+.table-filters input[type="text"], select, button{
+    padding: 5px;
+    border: none;
+    font-family: inherit;
+    outline: none;    
+    border-bottom: 2px solid #254ae8;    
+}
+
+.table-filters input[type="text"]{
+    padding: 5.5px 5px;
+}
+
+.table-filters button{
+    background-color: white;
+    padding: 5.5px 10px;
+}
+
+.table-filters input[type="text"]:hover, select:hover, .table-filters button:hover{
+    background-color: #DEDEDE !important;    
+}
+
+.table-filters button:hover{
+    cursor: pointer;
+}

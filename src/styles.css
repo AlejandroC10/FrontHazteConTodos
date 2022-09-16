@@ -1,1 +1,27 @@
 @import "~primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    font-family: 'Arial';    
+}
+
+body{
+    margin: 0;
+}
+
+.p-paginator button{
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 2.5px;
+    background-color: #254ae8;
+    border: none;
+    color: white;
+}
+
+.p-paginator button:hover{
+    background-color: #254ae890;
+}
+
+.p-highlight{
+    background-color: #254ae8AA !important;
+}
