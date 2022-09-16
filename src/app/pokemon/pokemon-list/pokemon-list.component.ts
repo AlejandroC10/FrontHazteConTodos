@@ -25,4 +25,8 @@ export class PokemonListComponent implements OnInit {
   globalFilter($event:Event, filterType:String){
     this.list.filterGlobal(($event.target as HTMLInputElement).value, filterType)
   }
+
+  filterByType($event: Event, filterColumn: string, filterType: string){
+    this.list.filter(($event.target as HTMLInputElement).value, filterColumn, filterType);
+  }
 }

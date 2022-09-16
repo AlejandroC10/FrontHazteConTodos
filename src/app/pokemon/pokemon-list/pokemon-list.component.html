@@ -1,6 +1,27 @@
 <p-table #dt1 [value]="pokemon" [globalFilterFields]="['name.english']">
     <ng-template pTemplate="caption">
         <div class="flex">
+            <select (change)="filterByType($event, 'type', 'contains')">
+                <option value="">All</option>
+                <option value="Bug">Bug</option>
+                <option value="Grass">Grass</option>
+                <option value="Fire">Fire</option>
+                <option value="Ground">Ground</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Fairy">Fairy</option>
+                <option value="Rock">Rock</option>
+                <option value="Electric">Electric</option>
+                <option value="Water">Water</option>
+                <option value="Ghost">Ghost</option>
+                <option value="Steel">Steel</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Dark">Dark</option>
+                <option value="Ice">Ice</option>
+                <option value="Normal">Normal</option>
+                <option value="Psychic">Psychic</option>
+                <option value="Fly">Fly</option>
+                <option value="Poison">Poison</option>
+            </select>
             <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
             <span class="p-input-icon-left ml-auto">
                 <i class="pi pi-search"></i>
